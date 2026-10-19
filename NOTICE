@@ -1,0 +1,14 @@
+photocraft-digital-patches
+Copyright (c) 2026 JQM136.
+Licensed under the MIT License or the Apache License, Version 2.0, at your option
+(LICENSE-MIT, LICENSE-APACHE).
+
+This repository documents changes made to PhotoCraft (https://github.com/storytold/photocraft),
+Copyright (c) 2026 ArtCraft Team and the PhotoCraft contributors, licensed under
+MIT OR Apache-2.0. The byte signatures in patches/ are short excerpts of the upstream
+v0.9.0 web build, used only to identify the bytes being changed.
+
+This repository contains no ArtCraft logos, wordmarks or other brand files. The ArtCraft name is
+a trademark of the ArtCraft Team, is not covered by the licenses above, and is used here only in
+plain text to say that PhotoCraft is made by the ArtCraft team. See
+https://github.com/storytold/photocraft/blob/v0.9.0/docs/brand/LICENSE-brand.txt.

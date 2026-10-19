@@ -1,0 +1,47 @@
+{
+  "id": "remove-promotion-rows-v2",
+  "upstream": {
+    "repository": "https://github.com/storytold/photocraft",
+    "tag": "v0.9.0",
+    "archive": "photocraft-web-0.9.0.zip",
+    "archiveUrl": "https://github.com/storytold/photocraft/releases/download/v0.9.0/photocraft-web-0.9.0.zip",
+    "archiveBytes": 11467035,
+    "archiveSha256": "b3fa5ab6a9d32bc5ff7dfdde31939a2337471a196a2e70f1ff961a61b1bb02e6",
+    "archiveRoot": "photocraft-web-0.9.0/"
+  },
+  "wasm": {
+    "file": "photocraft-web-4cc0a6fe355463b6_bg.wasm",
+    "inputSha256": "5d2e3b7254f478e8b5f09ef23e96f08651da2a9ee59c9f904a08515f4b77fa0b",
+    "outputSha256": "92ab30e3e586af8b30e29a2af98da67afb278072ebb53939f6468c74779dea9b",
+    "bytes": 25033027
+  },
+  "html": {
+    "file": "index.html",
+    "inputSha256": "fa06712b037be9140457248a205b2c5c74a15a0f79a1a0b9abf036ac3fe8e0d7",
+    "outputSha256": "a932800473bb3ab944269e554add7b119cd249e777c24bfd75f9989a6ac29901",
+    "change": "Only the SHA-384 integrity attribute of the .wasm preload link is replaced with the digest of the patched .wasm."
+  },
+  "blocks": [
+    {
+      "name": "title-bar Discord control",
+      "offset": 5688979,
+      "expectedHex": "20022a0210430000f0426045",
+      "replacementHex": "4101",
+      "effect": "The width check that decides whether to draw the title-bar Discord button is replaced by the constant i32.const 1 (rest of the 12 bytes become nop), so the button's block is always skipped."
+    },
+    {
+      "name": "welcome screen promotion",
+      "offset": 6880716,
+      "expectedHex": "200d430000d041108b23200241b00f6a200820014300003e4310977e20022802f80f10c6cf01200d4300002041108b2320082001108932",
+      "replacementHex": "",
+      "effect": "The stack-balanced instruction block that adds spacing, draws the Discord button (and drops its Response) and draws the project link row on the start screen is replaced entirely with nop."
+    },
+    {
+      "name": "About window promotion",
+      "offset": 19391876,
+      "expectedHex": "20022000280200220020014300005c4310977e200228024810c6cf01200141386a4300000041108b2320002001108932",
+      "replacementHex": "",
+      "effect": "The equivalent block in the About window (Discord button and project link row) is replaced entirely with nop."
+    }
+  ]
+}
